@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+    --softRed: hsl(14, 88%, 65%);
+    --veryDarkGrayBlue: hsl(237, 12%, 33%);
+    --darkGrayBlue: hsl(240, 6%, 50%);
+    --lightGrayBlue: hsl(240, 5%, 91%);
+    --fontSize: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--fontSize);
+}
+
+body {
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    font-family: "Poppins", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+section {
+    background-color: #fff;
+    background-image: url("/images/bg-pattern-desktop.svg");
+    background-position: center;
+    background-size: cover;
+
+    display: grid;
+    grid-template-columns: 400px 1fr;
+
+    border-radius: 2rem;
+    width: 80%;
+    padding: 4rem;
+}
+
+
+
+.Global {
+    border-bottom: 1px solid var(--lightGrayBlue);
+    padding: 1.3rem 0;
+}
+
+.Questions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.answer {
+    display: none;
+    margin-top: 1rem;
+    font-size: small;
+}
+
+.Questions.active {
+    color: var(--softRed);
+}
+
+.Questions.active img {
+    transform: rotate(180deg);
+}
+
+/*  move to picture */
+
+.Image_Global {
+    background: url(/images/illustration-woman-online-desktop.svg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 120% center;
+}
+
+.Image_Section {
+    position: relative;
+    left: -3rem;
+}
+
+.box {
+    position: absolute;
+    top: 42%;
+    left: -25%;
+}
+
+/* Your existing CSS code remains mostly the same */
+
+@media screen and (max-width: 768px) {
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Image_Global {
+        background: url('./images/illustration-woman-online-mobile.svg') center center no-repeat;
+        background-size: cover;
+        /* Add this property to ensure the image covers the entire container */
+    }
+
+    .Image_Section {
+        left: 0;
+    }
+
+    .box {
+        display: none;
+    }
+
+    .Global {
+        border-bottom: 1px solid var(--lightGrayBlue);
+        padding: 1rem 0;
+    }
+}
